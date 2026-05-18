@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="RegisterStyling.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="heading">
+    <nav>
+        <div class="logo">
+            <h1>WHITTY</h1>
+        </div>
+        <ul class="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Products</a></li>
+            <li><a href="index.html">Contact</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </nav>
+    </section>
+    <form onsubmit="return validateForm()">
+        <h2 id="form">REGISTER WITH SWEET TASTE BAKERY</h2>
+        <p>We are best in producing high quality products</p>
+        <p>Register with us to receive updates about the bakery!</p>
+        <fieldset>
+            <legend>Customer Registration</legend>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="" required > <br> <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" > <br> <br>
+        <label for="name">Email:</label>
+        <input type="email" > <br> <br>
+        <label for="name">Phone Number:</label>
+        <input type="tel" placeholder="0700-000-000" > <br> <br>
+        <label for="confirmpassword">Confirm Password:</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" > <br> <br>
+        <span  id="errormsg" style="color:red;"></span><br>
+        <input type="submit" value="Register" class="submit">
+        </fieldset>
+    </form>
+        <section class="footer">
+        <p>All Rights Reserved, Sweet Taste Bakery</p>
+    </section>
+    <script>
+
+function validateForm(){
+const password = document.getElementById("password").value;
+const confirmPassword = document.getElementById("confirmpassword").value;
+const errorMsg = document.getElementById("errormsg");
+//Clearing old error message
+ errorMsg.innerText="";  
+//checking if passwords match
+
+if(password !== confirmPassword){
+    errorMsg.innerText = "Password mismatch";
+return false;
+}
+}
+document.getElementById("form").style.fontSize="27px";
+document.getElementById("form").style.color="rgb(0 50 245";
+</script>
+</body>
+</html>
